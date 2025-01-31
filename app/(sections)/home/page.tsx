@@ -1,6 +1,7 @@
 "use client";
 import { AnimatedTooltipPreview } from "@/components/Flags";
 import FakeBtn from "@/components/ui/FakeBtn";
+import VideoPopup from "@/components/VideoPopup";
 import { AnimatePresence, motion } from "framer-motion";
 import { h1 } from "framer-motion/client";
 import Image from "next/image";
@@ -75,7 +76,7 @@ const Home = () => {
     <section>
       <div className="max-w-screen-2xl mx-auto px-4 py-28 gap-12 md:px-8 xl:flex xl:flex-col items-center">
         <div className="space-y-5 w-full mx-auto text-center">
-          <AnimatedTooltipPreview/>
+          <AnimatedTooltipPreview />
           {/* <div className="flex flex-wrap items-center justify-center xl:gap-5 gap-2">
             {features.map((item, idx) => (
               <div key={idx} className={`flex items-center`}>
@@ -159,7 +160,7 @@ const Home = () => {
             </a>
           </div>
         </div>
-        <div className="flex-1 mx-auto mt-14 xl:mt-0">
+        {/* <div className="flex-1 mx-auto mt-14 xl:mt-0">
           <div className="relative">
             <Image
               src="https://images.unsplash.com/photo-1513258496099-48168024aec0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
@@ -182,53 +183,12 @@ const Home = () => {
               </svg>
             </button>
           </div>
-        </div>
+        </div> */}
+        <VideoPopup
+          posterUrl={`https://images.unsplash.com/photo-1513258496099-48168024aec0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80`}
+          videoUrl={`https://www.youtube.com/embed/IEuvMXL1wOY`}
+        />
       </div>
-      {isVideoPoppedUp ? (
-        <div className="fixed inset-0 w-full h-full flex items-center justify-center">
-          <div
-            className="absolute inset-0 w-full h-full bg-black/50"
-            onClick={() => setVideoPopUp(false)}
-          ></div>
-          <div className="px-4 relative">
-            <button
-              className="w-12 h-12 mb-5 rounded-full duration-150 bg-gray-800 hover:bg-gray-700 text-white"
-              onClick={() => setVideoPopUp(false)}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="w-5 h-5 m-auto"
-              >
-                <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
-              </svg>
-            </button>
-            {/* <video
-              className="rounded-lg w-full max-w-2xl"
-              controls
-              autoPlay={true}
-            >
-              <source
-                src="https://raw.githubusercontent.com/sidiDev/remote-assets/main/FloatUI.mp4"
-                type="video/mp4"
-              />
-            </video> */}
-            <iframe
-              className="rounded-lg w-full max-w-6xl"
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/g1Pgo5yTIKg"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-      ) : (
-        ""
-      )}
     </section>
   );
 };
