@@ -56,7 +56,7 @@ export default function NotFoundPage() {
         // onMouseEnter={() => setHovered(true)}
         // onMouseLeave={() => setHovered(false)}
         label='Go Back'
-        href='/home'
+        href='/'
       >
         {hovered ? "Go Back Home 🏠" : "Return to Safety"}
       </Button>

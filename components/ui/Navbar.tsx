@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 
 const dropdownNavs = [
   {
-    label: "",
+    label: "Achievements",
     navs: [
       {
         title: "Awards",
-        desc: "Duis aute irure dolor in reprehenderit",
+        desc: "India's fastest growing Research Journal",
         path: "javascript:void(0)",
         icon: (
           <svg
@@ -29,7 +29,7 @@ const dropdownNavs = [
       },
       {
         title: "Journals",
-        desc: "Duis aute irure dolor in reprehenderit",
+        desc: "India's fastest growing Research Journal",
         path: "javascript:void(0)",
         icon: (
           <svg
@@ -49,7 +49,7 @@ const dropdownNavs = [
     navs: [
       {
         title: "Blog",
-        desc: "Duis aute irure dolor in reprehenderit",
+        desc: "India's fastest growing Research Journal",
         path: "javascript:void(0)",
         icon: (
           <svg
@@ -64,7 +64,7 @@ const dropdownNavs = [
       },
       {
         title: "Community",
-        desc: "Duis aute irure dolor in reprehenderit",
+        desc: "India's fastest growing Research Journal",
         path: "javascript:void(0)",
         icon: (
           <svg
@@ -84,7 +84,7 @@ const dropdownNavs = [
     navs: [
       {
         title: "About us",
-        desc: "Duis aute irure dolor in reprehenderit",
+        desc: "India's fastest growing Research Journal",
         path: "javascript:void(0)",
         icon: (
           <svg
@@ -94,7 +94,7 @@ const dropdownNavs = [
             className="w-6 h-6"
           >
             <path
-              fillRule="evenodd"
+              fill-rule="evenodd"
               d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 01-.988-1.129c1.454-1.272 3.776-1.272 5.23 0 1.513 1.324 1.513 3.518 0 4.842a3.75 3.75 0 01-.837.552c-.676.328-1.028.774-1.028 1.152v.75a.75.75 0 01-1.5 0v-.75c0-1.279 1.06-2.107 1.875-2.502.182-.088.351-.199.503-.331.83-.727.83-1.857 0-2.584zM12 18a.75.75 0 100-1.5.75.75 0 000 1.5z"
               clipRule="evenodd"
             />
@@ -103,7 +103,7 @@ const dropdownNavs = [
       },
       {
         title: "Careers",
-        desc: "Duis aute irure dolor in reprehenderit",
+        desc: "India's fastest growing Research Journal",
         path: "javascript:void(0)",
         icon: (
           <svg
@@ -113,7 +113,7 @@ const dropdownNavs = [
             className="w-6 h-6"
           >
             <path
-              fillRule="evenodd"
+              fill-rule="evenodd"
               d="M7.5 5.25a3 3 0 013-3h3a3 3 0 013 3v.205c.933.085 1.857.197 2.774.334 1.454.218 2.476 1.483 2.476 2.917v3.033c0 1.211-.734 2.352-1.936 2.752A24.726 24.726 0 0112 15.75c-2.73 0-5.357-.442-7.814-1.259-1.202-.4-1.936-1.541-1.936-2.752V8.706c0-1.434 1.022-2.7 2.476-2.917A48.814 48.814 0 017.5 5.455V5.25zm7.5 0v.09a49.488 49.488 0 00-6 0v-.09a1.5 1.5 0 011.5-1.5h3a1.5 1.5 0 011.5 1.5zm-3 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
               clipRule="evenodd"
             />
@@ -157,11 +157,11 @@ export const Navbar = () => {
   return (
     <>
       <nav
-        className={`sticky top-0 left-0 z-50 bg-[#edeef2] w-full md:static md:text-sm md:border-none ${
+        className={`fixed top-0 z-50 bg-[#edeef2] w-full md:sticky md:text-sm md:border-none ${
           state ? "shadow-lg rounded-b-xl md:shadow-none" : ""
         }`}
       >
-        <div className="items-center gap-x-14 px-4 max-w-screen-xl mx-auto md:flex md:px-8">
+        <div className="items-center xl:gap-x-14 sm:gap-6 px-4 max-w-screen-xl mx-auto md:flex md:px-4">
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <a href="javascript:void(0)">
               {/* <Image
@@ -171,10 +171,10 @@ export const Navbar = () => {
                 alt="Float UI logo"
               /> */}
               <div className="flex items-center text-black gap-1 justify-start">
-                <span className="text-3xl font-clash font-semibold">
+                <span className="text-3xl sm:text-2xl font-clash font-semibold">
                   Pahal{" "}
                 </span>
-                <span className="text-2xl font-clash font-medium">Horizon</span>
+                <span className="text-2xl sm:text-xl font-clash font-medium">Horizon</span>
                 <span className="w-2 h-2 mt-2 rounded-full bg-black"></span>
               </div>
             </a>
@@ -191,7 +191,7 @@ export const Navbar = () => {
                     fill="currentColor"
                   >
                     <path
-                      fillRule="evenodd"
+                      fill-rule="evenodd"
                       d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
                       clipRule="evenodd"
                     />
@@ -204,7 +204,7 @@ export const Navbar = () => {
                     className="w-6 h-6"
                   >
                     <path
-                      fillRule="evenodd"
+                      fill-rule="evenodd"
                       d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm8.25 5.25a.75.75 0 01.75-.75h8.25a.75.75 0 010 1.5H12a.75.75 0 01-.75-.75z"
                       clipRule="evenodd"
                     />
@@ -241,7 +241,7 @@ export const Navbar = () => {
                             className="w-5 h-5"
                           >
                             <path
-                              fillRule="evenodd"
+                              fill-rule="evenodd"
                               d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z"
                               clipRule="evenodd"
                             />
@@ -254,7 +254,7 @@ export const Navbar = () => {
                             className="w-5 h-5"
                           >
                             <path
-                              fillRule="evenodd"
+                              fill-rule="evenodd"
                               d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
                               clipRule="evenodd"
                             />
@@ -272,7 +272,7 @@ export const Navbar = () => {
                     {item.isDrapdown &&
                     drapdownState.idx == idx &&
                     drapdownState.isActive ? (
-                      <div className="mt-6 bg-[#edeef2] inset-x-0 top-20 w-full md:absolute md:border-y md:shadow-md md:mt-0">
+                      <div className="mt-6 bg-[#edeef2] z-50 inset-x-0 top-20 w-full md:absolute md:border-y md:shadow-md md:mt-0">
                         <ul className="max-w-screen-xl mx-auto grid items-center gap-6 md:p-8 md:grid-cols-2 lg:grid-cols-3">
                           {item?.navs.map((dropdownItem, idx) => (
                             <li key={idx}>
@@ -315,7 +315,7 @@ export const Navbar = () => {
                 <li>
                   <a
                     href="javascript:void(0)"
-                    className="block py-3 text-center text-gray-700 hover:text-indigo-600 border rounded-lg md:border-none"
+                    className="block py-3 text-nowrap text-center text-gray-700 hover:text-indigo-600 border rounded-lg md:border-none"
                   >
                     Log in
                   </a>
@@ -323,7 +323,7 @@ export const Navbar = () => {
                 <li>
                   <a
                     href="javascript:void(0)"
-                    className="block py-3 px-4 font-medium text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-md shadow md:inline"
+                    className="block py-3 px-4 text-nowrap font-medium text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-md shadow md:inline"
                   >
                     Sign up
                   </a>
@@ -335,7 +335,7 @@ export const Navbar = () => {
       </nav>
       {state ? (
         <div
-          className="z-10 fixed top-0 w-screen h-screen bg-black/20 backdrop-blur-sm md:hidden"
+          className="z-50 fixed top-0 w-screen h-screen bg-black/20 backdrop-blur-sm md:hidden"
           onClick={() => setState(false)}
         ></div>
       ) : (

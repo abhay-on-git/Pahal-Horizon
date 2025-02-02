@@ -2,9 +2,15 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["images.unsplash.com","youtube.com"], // Add the external hostname here
+    domains: [
+      "images.unsplash.com",
+      "plus.unsplash.com", // Add this for premium Unsplash images
+      "youtube.com",
+      "pahalhorizon.com",
+      "unsplash.com"
+    ],
   },
-  // You can add other configurations here as well
 };
 
 export default nextConfig;
+  
