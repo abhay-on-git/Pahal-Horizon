@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+// import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const dropdownNavs = [
@@ -147,6 +147,18 @@ export const Navbar = () => {
   ];
 
   useEffect(() => {
+    if (state) {
+      document.body.classList.add("stop-scroll");
+    } else {
+      document.body.classList.remove("stop-scroll");
+    }
+
+    return () => {
+      document.body.classList.remove("stop-scroll");
+    };
+  }, [state, drapdownState]);
+
+  useEffect(() => {
     document.onclick = (e) => {
       const target = e.target;
       if (!target.closest(".nav-menu"))
@@ -174,7 +186,9 @@ export const Navbar = () => {
                 <span className="text-3xl sm:text-2xl font-clash font-semibold">
                   Pahal{" "}
                 </span>
-                <span className="text-2xl sm:text-xl font-clash font-medium">Horizon</span>
+                <span className="text-2xl sm:text-xl font-clash font-medium">
+                  Horizon
+                </span>
                 <span className="w-2 h-2 mt-2 rounded-full bg-black"></span>
               </div>
             </a>
@@ -335,7 +349,7 @@ export const Navbar = () => {
       </nav>
       {state ? (
         <div
-          className="z-50 fixed top-0 w-screen h-screen bg-black/20 backdrop-blur-sm md:hidden"
+          className="z-30 fixed top-0 w-screen h-screen bg-black/20 backdrop-blur-sm md:hidden"
           onClick={() => setState(false)}
         ></div>
       ) : (

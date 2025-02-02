@@ -53,8 +53,6 @@ export default function NotFoundPage() {
       </motion.div>
       <Button
         className="mt-10 px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-full text-white font-medium shadow-lg"
-        // onMouseEnter={() => setHovered(true)}
-        // onMouseLeave={() => setHovered(false)}
         label='Go Back'
         href='/'
       >

@@ -2,10 +2,11 @@
 import WorldMap from "@/components/ui/world-map";
 import { motion } from "framer-motion";
 
-export function MapView() {
+export default function MapView() {
   return (
-    <div className="relative w-full flex flex-col items-center justify-center">
-      <div className="w-full py-40 dark:bg-black bg-white ">
+    <div className="relative w-full">
+
+      <div className="w-full lg:rounded-tl-[20vmax] lg:rounded-tr-[20vmax] lg:py-40 rounded-tl-[5vmax] rounded-tr-[5vmax] pt-12  dark:bg-black bg-white ">
         <div className="max-w-7xl mx-auto text-center">
           <p className="font-bold text-xl md:text-4xl dark:text-white text-black">
             Pahal Horizon{" "}
@@ -28,7 +29,7 @@ export function MapView() {
             connects global minds to shape a future without limits.
           </p>
         </div>
-        <div className="max-w-screen-2xl mx-auto rounded-2xl overflow-hidden">
+        <div className="max-w-screen-xl py-12 px-8 mx-auto rounded-2xl overflow-hidden">
           <WorldMap
             dots={[
               {

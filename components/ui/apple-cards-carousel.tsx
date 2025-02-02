@@ -5,6 +5,7 @@ import React, {
   useState,
   createContext,
   useContext,
+  useCallback,
 } from "react";
 import {
   ArrowLeftOutlined,
@@ -70,11 +71,11 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   };
 
   // Smooth scrolling function
-  const smoothScroll = (element, distance, duration) => {
+  const smoothScroll = (element: HTMLDivElement, distance: number, duration: number) => {
     const start = element.scrollLeft;
     const startTime = performance.now();
 
-    const animateScroll = (currentTime) => {
+    const animateScroll = (currentTime: number) => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
       const ease = easeOutCubic(progress);
@@ -187,7 +188,7 @@ export const Card = ({
 }) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const { onCardClose, currentIndex } = useContext(CarouselContext);
+  const { onCardClose } = useContext(CarouselContext);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -204,7 +205,7 @@ export const Card = ({
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [open]);
+  }, [handleClose, open]);
 
   useOutsideClick(containerRef, () => handleClose());
 
@@ -212,10 +213,11 @@ export const Card = ({
     setOpen(true);
   };
 
-  const handleClose = () => {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const handleClose = useCallback(() => {
     setOpen(false);
     onCardClose(index);
-  };
+  });
 
   return (
     <>
