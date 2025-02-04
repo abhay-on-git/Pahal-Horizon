@@ -70,7 +70,7 @@ const Home = () => {
       setIndex((prev) => (prev + 1) % tags.length);
     }, 2000); // Change tag every 2 seconds
     return () => clearInterval(interval);
-  }, []);
+  }, [tags.length]);
 
   return (
     <section>

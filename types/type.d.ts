@@ -1,5 +1,5 @@
 declare interface Buttonprops  {
-    label: string.isRequired,
+    label: string,
     href?: string,
     className?: string,
   };

@@ -1,22 +1,23 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+// import { useEffect, useState } from "react";
+// import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
+import { useState } from "react";
 
 export default function NotFoundPage() {
-  const router = useRouter();
+  // const router = useRouter();
   const [hovered, setHovered] = useState(false);
 
-//   useEffect(() => {
-//     // Optional: Auto-redirect to home after 10 seconds
-//     const timer = setTimeout(() => {
-//       router.push("/(sections)/home");
-//     }, 10000);
+  //   useEffect(() => {
+  //     // Optional: Auto-redirect to home after 10 seconds
+  //     const timer = setTimeout(() => {
+  //       router.push("/(sections)/home");
+  //     }, 10000);
 
-//     return () => clearTimeout(timer);
-//   }, [router]);
+  //     return () => clearTimeout(timer);
+  //   }, [router]);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-900 to-purple-800 text-white text-center p-4">
@@ -34,7 +35,7 @@ export default function NotFoundPage() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.6 }}
       >
-        Oops! The page you're looking for doesn't exist.
+        Oops! The page you&apos;re looking for doesn&apos;t exist.
       </motion.p>
       <motion.div
         className="relative"
@@ -51,13 +52,12 @@ export default function NotFoundPage() {
           style={{ filter: "blur(80px)" }}
         ></motion.div>
       </motion.div>
+
       <Button
         className="mt-10 px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-full text-white font-medium shadow-lg"
-        label='Go Back'
-        href='/'
-      >
-        {hovered ? "Go Back Home 🏠" : "Return to Safety"}
-      </Button>
+        label={hovered ? "Go Back Home 🏠" : "Return To Home"}
+        href="/"
+      />
     </div>
   );
 }
