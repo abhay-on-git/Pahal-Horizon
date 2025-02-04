@@ -5,7 +5,7 @@ import React, {
   useState,
   createContext,
   useContext,
-  useCallback,
+  JSX,
 } from "react";
 import {
   ArrowLeftOutlined,
@@ -95,7 +95,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   };
 
   // Ease-out function for a smooth deceleration effect
-  const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+  const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
 
   const handleCardClose = (index: number) => {
     if (carouselRef.current) {
@@ -191,14 +191,14 @@ export const Card = ({
   layout?: boolean;
 }) => {
   const [open, setOpen] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const { onCardClose } = useContext(CarouselContext);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const handleClose = useCallback(() => {
+  const handleClose = () => {
     setOpen(false);
     onCardClose(index);
-  });
+  };
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {

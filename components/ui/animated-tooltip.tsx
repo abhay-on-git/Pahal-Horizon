@@ -32,8 +32,8 @@ export const AnimatedTooltip = ({
     useTransform(x, [-100, 100], [-50, 50]),
     springConfig
   );
-  const handleMouseMove = (event: { target: { offsetWidth: number; }; nativeEvent: { offsetX: number; }; }) => {
-    const halfWidth = event.target.offsetWidth / 2;
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+    const halfWidth = event.currentTarget.offsetWidth / 2;
     x.set(event.nativeEvent.offsetX - halfWidth); // set the x value, which is then used in transform and rotate
   };
 
@@ -77,14 +77,16 @@ export const AnimatedTooltip = ({
               </motion.div>
             )}
           </AnimatePresence>
-          <Image
-            onMouseMove={handleMouseMove}
-            height={100}
-            width={100}
-            src={item.image}
-            alt={item.name}
-            className="object-cover !m-0 !p-0 object-top rounded-full h-14 w-14 border-2 group-hover:scale-105 group-hover:z-30 border-white  relative transition duration-500"
-          />
+          <div className="group relative">
+            <Image
+              onMouseMove={handleMouseMove}
+              src={item.image}
+              alt={item.name}
+              width={100}
+              height={100}
+              className="object-cover rounded-full h-14 w-14 border-2 group-hover:scale-105 group-hover:z-30 border-white transition duration-500"
+            />
+          </div>
         </div>
       ))}
     </>

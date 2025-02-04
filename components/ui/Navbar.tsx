@@ -1,8 +1,20 @@
 "use client";
 // import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, ReactNode } from "react";
 
-const dropdownNavs = [
+interface NavItem {
+  title: string;
+  desc: string;
+  path: string;
+  icon: ReactNode; // Icon is a React component, so we use ReactNode here
+}
+
+interface DropdownNav {
+  label: string;
+  navs: NavItem[]; // Array of NavItems
+}
+
+const dropdownNavs:DropdownNav[] = [
   {
     label: "Achievements",
     navs: [
@@ -127,9 +139,12 @@ const dropdownNavs = [
 
 export const Navbar = () => {
   const [state, setState] = useState(false);
-  const [drapdownState, setDrapdownState] = useState({
+  const [drapdownState, setDrapdownState] = useState<{
+    isActive: boolean;
+    idx: number | null; // Allow idx to be null
+  }>({
     isActive: false,
-    idx: null,
+    idx: null, // Initial value can be null
   });
 
   // Replace javascript:void(0) paths with your paths
@@ -159,10 +174,17 @@ export const Navbar = () => {
   }, [state, drapdownState]);
 
   useEffect(() => {
-    document.onclick = (e) => {
-      const target = e.target;
-      if (!target.closest(".nav-menu"))
+    document.onclick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null; // Explicitly cast
+
+      if (target && !target.closest(".nav-menu")) {
+        // Check if target exists
         setDrapdownState({ isActive: false, idx: null });
+      }
+    };
+
+    return () => {
+      document.onclick = null; // Cleanup event on unmount
     };
   }, []);
 
@@ -288,7 +310,7 @@ export const Navbar = () => {
                     drapdownState.isActive ? (
                       <div className="mt-6 bg-[#edeef2] z-50 inset-x-0 top-20 w-full md:absolute md:border-y md:shadow-md md:mt-0">
                         <ul className="max-w-screen-xl mx-auto grid items-center gap-6 md:p-8 md:grid-cols-2 lg:grid-cols-3">
-                          {item?.navs.map((dropdownItem, idx) => (
+                          {(item?.navs || []).map((dropdownItem, idx) => (
                             <li key={idx}>
                               <p className="text-indigo-600 text-sm">
                                 {dropdownItem.label}
