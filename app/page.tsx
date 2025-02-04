@@ -6,9 +6,8 @@ import About from "./(sections)/about/page";
 import LogoGrid from "./(sections)/logoGrid/page";
 import Team from "./(sections)/team/page";
 import Footer from "./(sections)/footer/page";
-import Sooter from "./(sections)/sooter/page";
 import Initiatives from "./(sections)/initiatives/page";
-import { MapView } from "./(sections)/mapView/page";
+import  MapView  from "./(sections)/mapView/page";
 
 export default function Page() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);

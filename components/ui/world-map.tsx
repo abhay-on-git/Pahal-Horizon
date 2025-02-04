@@ -70,7 +70,7 @@ export default function WorldMap({ dots = [], lineColor = "#0ea5e9" }: MapProps)
                 initial={{
                   pathLength: 0,
                 }}
-                animate={{
+                whileInView={{
                   pathLength: 1,
                 }}
                 transition={{

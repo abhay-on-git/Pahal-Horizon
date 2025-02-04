@@ -5,6 +5,7 @@ import {
 } from "@ant-design/icons";
 import Image from "next/image";
 import { FC } from "react";
+import { motion } from "framer-motion";
 
 type TeamMember = {
   avatar: string;
@@ -27,8 +28,7 @@ const team: TeamMember[] = [
     insta: "javascript:void(0)",
   },
   {
-    avatar:
-      "https://pahalhorizon.com/img/team/3.jpg",
+    avatar: "https://pahalhorizon.com/img/team/3.jpg",
     name: "Dr. Rachita Sharma",
     title: "Editor",
     desc: "A dedicated educator and researcher at St. John's College, Agra, committed to advancing knowledge in Accounts and Law while inspiring future generations.",
@@ -37,8 +37,7 @@ const team: TeamMember[] = [
     insta: "javascript:void(0)",
   },
   {
-    avatar:
-      "https://pahalhorizon.com/img/team/2.jpg",
+    avatar: "https://pahalhorizon.com/img/team/2.jpg",
     name: "Dr. Neetu Singh",
     title: "Editor",
     desc: "A distinguished Associate Professor at IIT Delhi, specializing in nanomaterials and biomedical applications, dedicated to advancing scientific research and innovation.",
@@ -47,8 +46,7 @@ const team: TeamMember[] = [
     insta: "javascript:void(0)",
   },
   {
-    avatar:
-      "https://pahalhorizon.com/img/team/1.jpg",
+    avatar: "https://pahalhorizon.com/img/team/1.jpg",
     name: "Dr. Yatendra Pal Singh",
     title: "Editor in Chief",
     desc: "Chief Editor at Pahal Horizon and dedicated educator, specializing in social work and counseling, committed to impactful research and community service",
@@ -62,19 +60,31 @@ const Team: FC = () => {
   return (
     <section className="py-14">
       <div className="max-w-screen-xl mx-auto px-4 md:px-8">
-        <div className="max-w-xl">
+        <motion.div
+          initial={{ y: -10, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="max-w-xl"
+        >
           <h3 className="text-gray-800 text-3xl font-semibold sm:text-4xl">
             Meet our Editorial Board Members
           </h3>
           <p className="text-gray-600 mt-3">
-          Discover the experts shaping our content with their knowledge and vision.
+            Discover the experts shaping our content with their knowledge and
+            vision.
           </p>
-        </div>
+        </motion.div>
         <div className="mt-12">
           <ul className="grid gap-8 lg:grid-cols-2">
             {team.map((item, idx) => (
               <li key={idx} className="gap-8 sm:flex">
-                <div className="w-full h-60 relative group overflow-hidden rounded-xl">
+                <motion.div
+                  initial={{ x: -10, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.5, delay: idx * 0.04 }}
+                  className="w-full h-60 relative group overflow-hidden rounded-xl"
+                >
                   <Image
                     src={item.avatar}
                     layout="fill"
@@ -82,7 +92,7 @@ const Team: FC = () => {
                     className="rounded-xl shadow-md transition-transform duration-500 ease-out group-hover:scale-110"
                     alt={item.name}
                   />
-                </div>
+                </motion.div>
                 <div className="mt-4 sm:mt-0">
                   <h4 className="text-lg text-gray-700 font-semibold">
                     {item.name}

@@ -71,7 +71,11 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   };
 
   // Smooth scrolling function
-  const smoothScroll = (element: HTMLDivElement, distance: number, duration: number) => {
+  const smoothScroll = (
+    element: HTMLDivElement,
+    distance: number,
+    duration: number
+  ) => {
     const start = element.scrollLeft;
     const startTime = performance.now();
 
@@ -138,7 +142,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                   opacity: 0,
                   y: 20,
                 }}
-                animate={{
+                whileInView={{
                   opacity: 1,
                   y: 0,
                   transition: {
@@ -190,6 +194,12 @@ export const Card = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const { onCardClose } = useContext(CarouselContext);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const handleClose = useCallback(() => {
+    setOpen(false);
+    onCardClose(index);
+  });
+
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
@@ -212,12 +222,6 @@ export const Card = ({
   const handleOpen = () => {
     setOpen(true);
   };
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const handleClose = useCallback(() => {
-    setOpen(false);
-    onCardClose(index);
-  });
 
   return (
     <>

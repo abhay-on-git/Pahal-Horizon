@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 export default function MapView() {
   return (
     <div className="relative w-full">
-
       <div className="w-full lg:rounded-tl-[20vmax] lg:rounded-tr-[20vmax] lg:py-40 rounded-tl-[5vmax] rounded-tr-[5vmax] pt-12  dark:bg-black bg-white ">
         <div className="max-w-7xl mx-auto text-center">
           <p className="font-bold text-xl md:text-4xl dark:text-white text-black">
@@ -16,7 +15,8 @@ export default function MapView() {
                   key={idx}
                   className="inline-block"
                   initial={{ x: -10, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  viewport={{ once: true, amount: 0.5 }}
                   transition={{ duration: 0.5, delay: idx * 0.04 }}
                 >
                   {word}

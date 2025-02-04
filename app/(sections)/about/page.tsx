@@ -1,12 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const About: React.FC = () => {
   return (
     <section className="py-14">
       <div className="max-w-screen-xl mx-auto md:px-8">
         <div className="items-center gap-x-12 sm:px-4 md:px-0 lg:flex">
-          <div className="flex-1 sm:hidden sm:rounded-lg lg:block group overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8}}
+            className="flex-1 sm:hidden sm:rounded-lg lg:block group overflow-hidden"
+          >
             <Image
               src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
               width={774}
@@ -14,16 +20,22 @@ const About: React.FC = () => {
               className="md:max-w-lg sm:rounded-lg transition-transform duration-500 ease-out group-hover:scale-105"
               alt="Professional services"
             />
-          </div>
-          <div className="max-w-xl px-4 space-y-3 mt-6 sm:px-0 md:mt-0 lg:max-w-2xl">
-            <h3 className="text-indigo-600 font-semibold">
-            Pahal Horizon
-            </h3>
+          </motion.div>
+          <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8}}
+          className="max-w-xl px-4 space-y-3 mt-6 sm:px-0 md:mt-0 lg:max-w-2xl">
+            <h3 className="text-indigo-600 font-semibold">Pahal Horizon</h3>
             <p className="text-gray-800 text-3xl font-semibold sm:text-4xl">
-            India&apos;s fastest growing Research community
+              India&apos;s fastest growing Research community
             </p>
             <p className="mt-3 text-gray-600">
-            Join a thriving community of scholars dedicated to advancing research through global collaboration, innovation, and meaningful connections. Engage with leading minds, share groundbreaking ideas, and shape the future of knowledge on an international scale.
+              Join a thriving community of scholars dedicated to advancing
+              research through global collaboration, innovation, and meaningful
+              connections. Engage with leading minds, share groundbreaking
+              ideas, and shape the future of knowledge on an international
+              scale.
             </p>
             <Link
               href="#"
@@ -43,7 +55,7 @@ const About: React.FC = () => {
                 />
               </svg>
             </Link>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

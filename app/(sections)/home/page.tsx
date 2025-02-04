@@ -116,12 +116,27 @@ const Home = () => {
               </AnimatePresence>
             </div>
           </div>
-          <p className="max-w-xl font-medium text-black pt-4 mx-auto">
+          {/* <p className="max-w-xl font-medium text-black pt-4 mx-auto">
             India&apos;s fastest-growing research and journal, shaping the
             future of innovation and academic excellence with groundbreaking
             studies and insights.
-          </p>
-          <div className="items-center pt-6 justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0">
+          </p> */}
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }} // Easier easing for smoothness
+            className="max-w-xl font-medium text-black pt-4 mx-auto"
+          >
+            India&apos;s fastest-growing research and journal, shaping the
+            future of innovation and academic excellence with groundbreaking
+            studies and insights.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="items-center pt-6 justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0"
+          >
             <a
               href="javascript:void(0)"
               className="flex items-center justify-center gap-x-2 py-2 px-4 text-white font-medium bg-[#1f4fff] duration-150 hover:bg-[#2d4cb9] active:bg-gray-900 rounded-md md:inline-flex"
@@ -158,7 +173,7 @@ const Home = () => {
                 />
               </svg>
             </a>
-          </div>
+          </motion.div>
         </div>
         {/* <div className="flex-1 mx-auto mt-14 xl:mt-0">
           <div className="relative">
@@ -184,10 +199,16 @@ const Home = () => {
             </button>
           </div>
         </div> */}
-        <VideoPopup
-          posterUrl={`https://images.unsplash.com/photo-1614935151651-0bea6508db6b?q=80&w=1825&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
-          videoUrl={`https://www.youtube.com/embed/IEuvMXL1wOY`}
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+        >
+          <VideoPopup
+            posterUrl={`https://images.unsplash.com/photo-1614935151651-0bea6508db6b?q=80&w=1825&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
+            videoUrl={`https://www.youtube.com/embed/IEuvMXL1wOY`}
+          />
+        </motion.div>
       </div>
     </section>
   );
