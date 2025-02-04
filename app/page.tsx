@@ -1,13 +1,23 @@
 "use client";
+import dynamic from "next/dynamic";
 // import { useRouter } from "next/navigation";
 // import { useEffect, useState } from "react";
-import Home from "./(sections)/home/page";
-import About from "./(sections)/about/page";
-import LogoGrid from "./(sections)/logoGrid/page";
-import Team from "./(sections)/team/page";
-import Footer from "./(sections)/footer/page";
-import Initiatives from "./(sections)/initiatives/page";
-import  MapView  from "./(sections)/mapView/page";
+
+const Home = dynamic(() => import("./(sections)/home/page"), { ssr: false });
+const About = dynamic(() => import("./(sections)/about/page"), { ssr: false });
+const LogoGrid = dynamic(() => import("./(sections)/logoGrid/page"), {
+  ssr: false,
+});
+const Team = dynamic(() => import("./(sections)/team/page"), { ssr: false });
+const Footer = dynamic(() => import("./(sections)/footer/page"), {
+  ssr: false,
+});
+const Initiatives = dynamic(() => import("./(sections)/initiatives/page"), {
+  ssr: false,
+});
+const MapView = dynamic(() => import("./(sections)/mapView/page"), {
+  ssr: false,
+});
 
 export default function Page() {
   // const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -26,8 +36,8 @@ export default function Page() {
       <Home />
       <About />
       <LogoGrid />
-      <MapView/>
-      <Initiatives/>
+      <MapView />
+      <Initiatives />
       <Team />
       <Footer />
     </div>

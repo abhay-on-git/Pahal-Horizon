@@ -87,7 +87,7 @@ const Team: FC = () => {
                 >
                   <Image
                     src={item.avatar}
-                    layout="fill"
+                    fill
                     objectFit="cover"
                     className="rounded-xl shadow-md transition-transform duration-500 ease-out group-hover:scale-110"
                     alt={item.name}
