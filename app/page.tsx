@@ -1,5 +1,6 @@
 "use client";
 import dynamic from "next/dynamic";
+import {Suspense} from "react";
 // import { useRouter } from "next/navigation";
 // import { useEffect, useState } from "react";
 
@@ -32,7 +33,7 @@ export default function Page() {
   // if (!isLoggedIn) return null; // Avoid rendering before redirect
 
   return (
-    <div className="">
+    <Suspense fallback={<>Loading...</>}>
       <Home />
       <About />
       <LogoGrid />
@@ -40,6 +41,6 @@ export default function Page() {
       <Initiatives />
       <Team />
       <Footer />
-    </div>
+    </Suspense>
   );
 }
