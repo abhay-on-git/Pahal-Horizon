@@ -8,7 +8,7 @@ import { useState } from "react";
 
 export default function NotFoundPage() {
   // const router = useRouter();
-  const [hovered, setHovered] = useState(false);
+  const [hovered] = useState(false);
 
   //   useEffect(() => {
   //     // Optional: Auto-redirect to home after 10 seconds
