@@ -4,7 +4,7 @@ import {Suspense} from "react";
 // import { useRouter } from "next/navigation";
 // import { useEffect, useState } from "react";
 
-const Home = dynamic(() => import("./(sections)/home/page"), { ssr: false });
+const Home = dynamic(() => import("./(sections)/hero/page"), { ssr: false });
 const About = dynamic(() => import("./(sections)/about/page"), { ssr: false });
 const LogoGrid = dynamic(() => import("./(sections)/logoGrid/page"), {
   ssr: false,

@@ -9,8 +9,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: '#18181b',
+    secondary: "#0a0a0a", 
+    background: "#ededed",
+    gray: '#374151',
+    text: "#333333",
+    error: "#ff4d4f",
+    success: "#52c41a",
       },
       fontFamily: {
         clash: ["Clash Display", "sans-serif"], // Add Clash Display

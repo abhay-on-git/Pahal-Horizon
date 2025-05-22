@@ -27,11 +27,11 @@ const About: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8}}
           className="max-w-xl px-4 space-y-3 mt-6 sm:px-0 md:mt-0 lg:max-w-2xl">
-            <h3 className="text-indigo-600 font-semibold">Pahal Horizon</h3>
-            <p className="text-gray-800 text-3xl font-semibold sm:text-4xl">
+            <h3 className="text-primary font-semibold">Pahal Horizon</h3>
+            <p className="text-gray text-3xl font-semibold sm:text-4xl">
               India&apos;s fastest growing Research community
             </p>
-            <p className="mt-3 text-gray-600">
+            <p className="mt-3 text-gray">
               Join a thriving community of scholars dedicated to advancing
               research through global collaboration, innovation, and meaningful
               connections. Engage with leading minds, share groundbreaking
@@ -40,7 +40,7 @@ const About: React.FC = () => {
             </p>
             <Link
               href="#"
-              className="inline-flex gap-x-1 items-center text-indigo-600 hover:text-indigo-500 duration-150 font-medium"
+              className="inline-flex gap-x-1 items-center text-primary hover:text-secondary duration-150 font-medium"
             >
               Learn more
               <svg

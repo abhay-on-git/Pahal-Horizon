@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
+import { Carousel, Card } from "@/components/ui/cards-carousel";
 
 export default function Initiatives() {
   const cards = data.map((card, index) => (

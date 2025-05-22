@@ -88,10 +88,10 @@ export default function Footer() {
   ];
 
   return (
-    <div className="w-full pt-8 bg-white">
-      <footer className="text-gray-500 bg-white px-4 py-5 max-w-screen-xl mx-auto md:px-8">
+    <div className="w-full pt-8 bg-black">
+      <footer className="text-gray-500 bg-black px-4 py-5 max-w-screen-xl mx-auto md:px-8">
         <div className="mx-auto mb-16 max-w-md">
-          <strong className="block text-center text-xl font-clash font-semibold text-gray-900 sm:text-3xl">
+          <strong className="block text-center text-xl font-clash font-semibold text-background sm:text-3xl">
             Want us to email you with our latest Journals ?
           </strong>
 
@@ -109,7 +109,7 @@ export default function Footer() {
                 placeholder="john@doe.com"
               />
 
-              <button className="absolute end-1 top-1/2 -translate-y-1/2 rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700">
+              <button className="absolute end-1 top-1/2 -translate-y-1/2 rounded-lg bg-primary px-5 py-3 text-sm font-medium text-background transition hover:bg-secondary">
                 Subscribe
               </button>
             </div>
@@ -119,16 +119,16 @@ export default function Footer() {
           <div className="flex-1">
             <div className="max-w-xs">
               {/* <Image src="" className="w-32" alt={""} /> */}
-              <div className="flex items-center text-black gap-1 justify-start">
+              <div className="flex items-center text-background gap-1 justify-start">
                 <span className="text-3xl sm:text-2xl font-clash font-semibold">
                   Pahal{" "}
                 </span>
                 <span className="text-2xl sm:text-xl font-clash font-medium">
                   Horizon
                 </span>
-                <span className="w-2 h-2 mt-2 rounded-full bg-black"></span>
+                <span className="w-2 h-2 mt-2 rounded-full bg-background"></span>
               </div>
-              <p className="leading-relaxed mt-2 text-[15px]">
+              <p className="leading-relaxed mt-2 text-[15px] text-gray-400">
                 India&apos;s fastest growing Research community
               </p>
             </div>
@@ -163,12 +163,12 @@ export default function Footer() {
           <div className="flex-1 mt-10 space-y-6 items-center justify-between sm:flex md:space-y-0 md:mt-0">
             {footerNavs.map((item, idx) => (
               <ul className="space-y-4" key={idx}>
-                <h4 className="text-gray-800 font-medium">{item.label}</h4>
+                <h4 className="text-background font-medium">{item.label}</h4>
                 {item.items.map((el, idx) => (
                   <li key={idx}>
                     <a
                       href={el.href}
-                      className="hover:underline hover:text-indigo-600"
+                      className="hover:underline text-[#ffffff9b] hover:text-background font-normal"
                     >
                       {el.name}
                     </a>
@@ -185,14 +185,13 @@ export default function Footer() {
             Created with
             <a
               href="#"
-              className="text-gray-700 transition hover:text-gray-700/75"
+              className="text-gray-700 transition hover:text-gray"
             >
               💓
             </a>
-            via{" "}
             <a
               href="#"
-              className="text-gray-700 transition hover:text-gray-700/75"
+              className="text-gray-700 transition hover:text-gray"
             >
               Pahal Horizon
             </a>

@@ -40,7 +40,7 @@ const VideoPopup = ({
           height={580}
         />
         <button
-          className="absolute w-16 h-16 rounded-full inset-0 m-auto duration-150 bg-blue-500 hover:bg-blue-600 ring-offset-2 focus:ring text-white"
+          className="absolute w-16 h-16 rounded-full inset-0 m-auto duration-150 bg-primary hover:bg-secondary ring-offset-2 focus:ring text-background"
           onClick={() => setVideoPopUp(true)}
         >
           <svg
@@ -63,7 +63,7 @@ const VideoPopup = ({
           ></div>
           <div className="relative px-4 max-w-4xl w-full">
             <button
-              className="w-12 h-12 mb-5 rounded-full duration-150 bg-gray-800 hover:bg-gray-700 text-white"
+              className="w-12 h-12 mb-5 rounded-full duration-150 bg-gray-800 hover:bg-gray-700 text-background"
               onClick={() => setVideoPopUp(false)}
             >
               <svg

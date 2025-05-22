@@ -95,23 +95,23 @@ const Team: FC = () => {
                   />
                 </motion.div>
                 <div className="mt-4 sm:mt-0">
-                  <h4 className="text-lg text-gray-700 font-semibold">
+                  <h4 className="text-lg text-gray font-semibold">
                     {item.name}
                   </h4>
-                  <p className="text-indigo-600">{item.title}</p>
-                  <p className="text-gray-600 mt-2">{item.desc}</p>
+                  <p className="text-primary">{item.title}</p>
+                  <p className="text-gray mt-2">{item.desc}</p>
                   <div className="mt-3 flex gap-4 text-gray-400">
                     <a
                       href={item.linkedin}
                       aria-label="LinkedIn"
-                      className="hover:text-gray-900 text-gray-700 text-2xl"
+                      className="hover:text-primary text-gray text-2xl"
                     >
                       <LinkedinOutlined />
                     </a>
                     <a
                       href={item.insta}
                       aria-label="Inastagram"
-                      className="hover:text-gray-900 text-gray-700 text-2xl"
+                      className="hover:text-primary text-gray text-2xl"
                     >
                       <InstagramOutlined />
                     </a>
@@ -119,7 +119,7 @@ const Team: FC = () => {
                     <a
                       href={item.profile}
                       aria-label="Profile"
-                      className="hover:text-gray-900 text-gray-700 text-2xl"
+                      className="hover:text-primary text-gray text-2xl"
                     >
                       <UserOutlined />
                     </a>

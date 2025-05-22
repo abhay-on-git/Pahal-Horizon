@@ -94,7 +94,7 @@ const Home = () => {
             ))}
           </div> */}
           <div className="flex flex-col justify-center items-center">
-            <h1 className="text-4xl w-full font-clash pt-6 text-black font-semibold mx-auto md:text-6xl xl:text-7xl">
+            <h1 className="text-4xl w-full font-clash pt-6 text-primary font-semibold mx-auto md:text-6xl xl:text-7xl">
               Research & Journal For
             </h1>
             <div className="w-full p-3 flex justify-center h-20 relative">
@@ -109,14 +109,14 @@ const Home = () => {
                     bgColors[index % bgColors.length]
                   } transform rotate-4 `}
                 >
-                  <h1 className="text-black text-3xl md:text-4xl xl:text-6xl font-clash font-semibold text-center">
+                  <h1 className="text-primary text-3xl md:text-4xl xl:text-6xl font-clash font-semibold text-center">
                     {tags[index]}
                   </h1>
                 </motion.div>
               </AnimatePresence>
             </div>
           </div>
-          {/* <p className="max-w-xl font-medium text-black pt-4 mx-auto">
+          {/* <p className="max-w-xl font-medium text-primary pt-4 mx-auto">
             India&apos;s fastest-growing research and journal, shaping the
             future of innovation and academic excellence with groundbreaking
             studies and insights.
@@ -125,7 +125,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2, ease: "easeInOut" }} // Easier easing for smoothness
-            className="max-w-xl font-medium text-black pt-4 mx-auto"
+            className="max-w-xl font-medium text-primary pt-4 mx-auto"
           >
             India&apos;s fastest-growing research and journal, shaping the
             future of innovation and academic excellence with groundbreaking
@@ -139,7 +139,7 @@ const Home = () => {
           >
             <a
               href="javascript:void(0)"
-              className="flex items-center justify-center gap-x-2 py-2 px-4 text-white font-medium bg-[#1f4fff] duration-150 hover:bg-[#2d4cb9] active:bg-gray-900 rounded-md md:inline-flex"
+              className="flex items-center justify-center gap-x-2 py-2 px-4 text-background font-medium bg-primary duration-150 hover:bg-secondary active:bg-gray-900 rounded-md md:inline-flex"
             >
               Join Community
               <svg
@@ -157,7 +157,7 @@ const Home = () => {
             </a>
             <a
               href="javascript:void(0)"
-              className="flex items-center justify-center gap-x-2 py-2 px-4 text-black hover:text-black font-medium duration-150 active:bg-gray-100 border border-black rounded-lg md:inline-flex"
+              className="flex items-center justify-center gap-x-2 py-2 px-4 text-primary hover:text-secondary font-medium duration-150 active:bg-gray-100 border border-secondary rounded-lg md:inline-flex"
             >
               Explore Journals
               <svg
