@@ -13,6 +13,8 @@ export default {
     secondary: "#0a0a0a", 
     background: "#ededed",
     gray: '#374151',
+    lightGray: '#f3f4f6',
+    mediumGray:'#d1d5db',
     text: "#333333",
     error: "#ff4d4f",
     success: "#52c41a",

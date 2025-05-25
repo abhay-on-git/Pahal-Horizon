@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 // import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const Home = () => {
+const Hero = () => {
   // const features = [
   //   {
   //     name: "Trusted",
@@ -214,4 +214,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Hero;

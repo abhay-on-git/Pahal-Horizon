@@ -4,7 +4,7 @@ import {Suspense} from "react";
 // import { useRouter } from "next/navigation";
 // import { useEffect, useState } from "react";
 
-const Home = dynamic(() => import("./(sections)/hero/page"), { ssr: false });
+const Hero = dynamic(() => import("./(sections)/hero/page"), { ssr: false });
 const About = dynamic(() => import("./(sections)/about/page"), { ssr: false });
 const LogoGrid = dynamic(() => import("./(sections)/logoGrid/page"), {
   ssr: false,
@@ -34,7 +34,7 @@ export default function Page() {
 
   return (
     <Suspense fallback={<>Loading...</>}>
-      <Home />
+      <Hero />
       <About />
       <LogoGrid />
       <MapView />
