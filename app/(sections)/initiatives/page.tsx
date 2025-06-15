@@ -1,91 +1,124 @@
-"use client";
-import Image from "next/image";
-import React from "react";
-import { Carousel, Card } from "@/components/ui/cards-carousel";
+import React from 'react';
 
-export default function Initiatives() {
-  const cards = data.map((card, index) => (
-    <Card key={card.src} card={card} index={index} />
-  ));
+export default function OurInitiatives() {
+  const initiatives = [
+    {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+        </svg>
+      ),
+      title: "Fast Development",
+      desc: "Accelerate your development process with our cutting-edge tools and frameworks designed for maximum efficiency and performance."
+    },
+    {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+        </svg>
+      ),
+      title: "Advanced Analytics",
+      desc: "Gain deep insights into your data with our comprehensive analytics platform that transforms raw information into actionable intelligence."
+    },
+    {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+        </svg>
+      ),
+      title: "Enterprise Security",
+      desc: "Protect your valuable data with our enterprise-grade security solutions featuring advanced encryption and multi-layer protection protocols."
+    },
+    {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3" />
+        </svg>
+      ),
+      title: "Scalable Infrastructure",
+      desc: "Build applications that grow with your business using our robust, scalable infrastructure designed to handle any workload seamlessly."
+    },
+    {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+        </svg>
+      ),
+      title: "Trusted & Reliable",
+      desc: "Count on our proven track record of reliability and trust, delivering consistent performance for mission-critical applications worldwide."
+    },
+    {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+        </svg>
+      ),
+      title: "Innovation First",
+      desc: "Stay ahead of the curve with our innovative solutions that leverage the latest technologies and methodologies to drive your success forward."
+    },
+  ];
 
   return (
-    <div className="w-full h-full py-20 bg-black">
-      <h2 className="max-w-7xl pl-4 mx-auto text-xl text-center md:text-start md:text-5xl font-semibold text-neutral-800 dark:text-neutral-200 font-clash">
-        What We&apos;re Offering
-      </h2>
-      <Carousel items={cards} />
-    </div>
+    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <div className="max-w-screen-xl mx-auto px-4 md:px-8">
+        {/* Header Section */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6 leading-tight">
+            Our Initiatives
+          </h2>
+          <p className="text-xl text-gray leading-relaxed">
+            Discover the comprehensive solutions and innovative approaches that drive our mission forward, 
+            empowering organizations to achieve unprecedented growth and success.
+          </p>
+        </div>
+
+        {/* Initiatives Grid */}
+        <div className="grid gap-8 md:gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          {initiatives.map((item, idx) => (
+            <div
+              key={idx}
+              className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 overflow-hidden"
+            >
+              {/* Background Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Content */}
+              <div className="relative z-10">
+                {/* Icon Container */}
+                <div className="relative mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    {item.icon}
+                  </div>
+                  <div className="absolute -top-1 -right-1 w-6 h-6 bg-yellow-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+                </div>
+
+                {/* Title */}
+                <h3 className="text-xl font-bold text-primary mb-4 group-hover:text-secondary transition-colors duration-300">
+                  {item.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                  {item.desc}
+                </p>
+
+                {/* Hover Arrow */}
+                <div className="mt-6 flex items-center text-blue-600 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0">
+                  <span className="text-sm font-semibold mr-2">Learn More</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Decorative Elements */}
+              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full -translate-y-10 translate-x-10 opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
+              <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-purple-100 to-blue-100 rounded-full translate-y-8 -translate-x-8 opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
   );
 }
-
-const DummyContent = () => {
-  return (
-    <>
-      {[...new Array(3).fill(1)].map((_, index) => {
-        return (
-          <div
-            key={"dummy-content" + index}
-            className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
-          >
-            <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
-              <span className="font-bold text-neutral-700 dark:text-neutral-200">
-                ✌️ Welcome to Pahal Horizon – Where Ambitions Take Flight!
-              </span>{" "}
-              Join a community that fuels your growth, sparks innovation, and
-              empowers your journey. Network with like-minded individuals, gain
-              valuable insights, and unlock new opportunities. Ready to turn
-              dreams into reality? Your horizon starts here! 🚀
-            </p>
-            <Image
-              src="https://images.unsplash.com/photo-1578269174936-2709b6aeb913?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Macbook mockup from Aceternity UI"
-              height="500"
-              width="500"
-              className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
-            />
-          </div>
-        );
-      })}
-    </>
-  );
-};
-
-const data = [
-  {
-    category: "Internship Program",
-    title: "You can do Research in Forigen.",
-    src: "https://images.unsplash.com/photo-1530747656683-c940eb6472d0?q=80&w=1990&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <DummyContent />,
-  },
-  {
-    category: "Latest Events",
-    title: "Networking with Global Researchers.",
-    src: "https://images.unsplash.com/photo-1576670158333-9cf3fbdef080?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <DummyContent />,
-  },
-  {
-    category: "Membership",
-    title: "Become a member of International Journal.",
-    src: "https://images.unsplash.com/photo-1574802406791-ef6898f311d3?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <DummyContent />,
-  },
-
-  {
-    category: "Podcasts",
-    title: "Podcast from the Global Scientists.",
-    src: "https://images.unsplash.com/photo-1615458318132-1f151a3d18f4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <DummyContent />,
-  },
-  {
-    category: "Submit Manuscript",
-    title: "Make your Research Viral.",
-    src: "https://plus.unsplash.com/premium_photo-1677187301660-5e557d9c0724?q=80&w=1930&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <DummyContent />,
-  },
-  {
-    category: "Hiring",
-    title: "Opportunity to get Hired.",
-    src: "https://images.unsplash.com/photo-1501743411739-de52ea0ce6a0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <DummyContent />,
-  },
-];
